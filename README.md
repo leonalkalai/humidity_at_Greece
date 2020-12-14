@@ -1,2 +1,2 @@
 
-This is a website that displays humidity all ver Greece.
+This is a website that displays humidity all over Greece.
