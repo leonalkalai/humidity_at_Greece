@@ -34,6 +34,7 @@ function getLocation(){
         return res.json() 
       })
     .then(data => { 
+      $('.js-results').html(`<ul class="tt-results-list"><li class="tt-results-list__item" data-id="GR/GEO/p0/92"><div class="tt-search-result"><div class="tt-search-result__name"></div><div class="tt-search-result__address">Τοποθεσία</div><div class="tt-search-result__distance"><p>0%</p><p> Ελληνικη Δημοκρατια</p></div></div></li></ul>`).show(); 
         errormessage.html("");
         humidity = data.locations[0].values[0].humidity;
         locationsname = data.locations[0].name; 
