@@ -20,10 +20,35 @@ $('.js-results').html(`<ul class="tt-results-list"><li class="tt-results-list__i
 //   });
 // });
 
-$('input').keyup(function(){
+// $('input').on('change',function () {
+//   $('.js-results').show();
+//   percent=0; 
+//   getLocation();
+// }); 
+$('input').on('focusout',function () {
   percent=0; 
   getLocation();
+
 });
+$('input').keypress(function(e){
+  if(e.which == 13) {
+  percent=0; 
+  getLocation();
+ }
+});
+
+// $('input').bind('keydown', function(e) {
+//   $('.js-results').show();
+//      percent=0; 
+//     getLocation();
+//  });
+
+$('input').off('keydown');
+
+$('input').bind('keydown', function(e) {
+  e.stopPropagation(); 
+});
+
 
 function getLocation(){
     mylocationtext = $('.tt-search-result__address').text();
@@ -34,7 +59,7 @@ function getLocation(){
         return res.json() 
       })
     .then(data => { 
-      $('.js-results').html(`<ul class="tt-results-list"><li class="tt-results-list__item" data-id="GR/GEO/p0/92"><div class="tt-search-result"><div class="tt-search-result__name"></div><div class="tt-search-result__address">Τοποθεσία</div><div class="tt-search-result__distance"><p>0%</p><p> Ελληνικη Δημοκρατια</p></div></div></li></ul>`).show(); 
+        $('.js-results').show(); 
         errormessage.html("");
         humidity = data.locations[0].values[0].humidity;
         locationsname = data.locations[0].name; 
@@ -50,8 +75,8 @@ function getLocation(){
       showpercent();
     }) 
     .catch( err => {
-      $('.js-results').html(`<ul class="tt-results-list"><li class="tt-results-list__item" data-id="GR/GEO/p0/92"><div class="tt-search-result"><div class="tt-search-result__name"></div><div class="tt-search-result__address">Τοποθεσία</div><div class="tt-search-result__distance"><p>0%</p><p> Ελληνικη Δημοκρατια</p></div></div></li></ul>`).show(); 
       //errormessage.innerHTML = `${err}`;
+      $('.js-results').html(`<ul class="tt-results-list"><li class="tt-results-list__item" data-id="GR/GEO/p0/92"><div class="tt-search-result"><div class="tt-search-result__name"></div><div class="tt-search-result__address">Τοποθεσία</div><div class="tt-search-result__distance"><p>0%</p><p> Ελληνικη Δημοκρατια</p></div></div></li></ul>`).show(); 
       if(err=="TypeError: Cannot read property '0' of undefined"){
         // errormessage.innerHTML = `Εισάγετε τιμή`;
         //$('#entervalue').html(`Εισάγετε τιμή`);
@@ -67,7 +92,7 @@ function getLocation(){
             "transform":'translate(0'+','+(100-percent)+'%)'
           });
       }
-    });
+  });
 }
 
 
