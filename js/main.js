@@ -1,5 +1,16 @@
 "use strict";
- 
+
+// stop soft keyboard resizing Chrome browser window on Android mobiles
+$(document).ready(function() {
+  setTimeout(function () {
+    var viewheight = $(window).height();
+    var viewwidth = $(window).width();
+    var viewport = $("meta[name=viewport]");
+    viewport.attr("content", "height=" + viewheight + "px, width=" + 
+    viewwidth + "px, initial-scale=1.0");
+}, 300);
+});
+/////////////////////////////////////////////////////////////////////////
 $('body').css("background-color", "#f2f2f2");
 
 let info = $('#info');
