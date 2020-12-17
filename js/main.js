@@ -66,11 +66,8 @@ function getLocation(){
       showpercent();
     }) 
     .catch( err => {
-      //errormessage.innerHTML = `${err}`;
       $('.js-results').html(`<ul class="tt-results-list"><li class="tt-results-list__item" data-id="GR/GEO/p0/92"><div class="tt-search-result"><div class="tt-search-result__name"></div><div class="tt-search-result__address">Τοποθεσία</div><div class="tt-search-result__distance"><p>0%</p><p> Ελληνικη Δημοκρατια</p></div></div></li></ul>`).show(); 
       if(err=="TypeError: Cannot read property '0' of undefined"){
-        // errormessage.innerHTML = `Εισάγετε τιμή`;
-        //$('#entervalue').html(`Εισάγετε τιμή`);
           clearInterval(myinterval);
           for (var i = 1; i < myinterval; i++){
            window.clearInterval(i);
