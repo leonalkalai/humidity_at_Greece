@@ -10,7 +10,7 @@ $(document).ready(function() {
     viewwidth + "px, initial-scale=1.0");
 }, 300);
 });
-/////////////////////////////////////////////////////////////////////////
+
 $('body').css("background-color", "#f2f2f2");
 
 let info = $('#info');
@@ -23,19 +23,6 @@ info.append(`<p id="entervalue"></p>`);
 
 $('.js-results').html(`<ul class="tt-results-list"><li class="tt-results-list__item" data-id="GR/GEO/p0/92"><div class="tt-search-result"><div class="tt-search-result__name"></div><div class="tt-search-result__address">Τοποθεσία</div><div class="tt-search-result__distance"><p>0%</p><p> Ελληνικη Δημοκρατια</p></div></div></li></ul>`).show();
 
-// $('input').on('change',function () {
-//   $('#mybutton').on('click', function() {
-//   $('#mybutton').trigger('click');
-//    percent=0; 
-//    getLocation();
-//   });
-// });
-
-// $('input').on('change',function () {
-//   $('.js-results').show();
-//   percent=0; 
-//   getLocation();
-// }); 
 $('input').on('focusout',function () {
   percent=0; 
   getLocation();
@@ -48,18 +35,11 @@ $('input').keypress(function(e){
  }
 });
 
-// $('input').bind('keydown', function(e) {
-//   $('.js-results').show();
-//      percent=0; 
-//     getLocation();
-//  });
-
 $('input').off('keydown');
 
 $('input').bind('keydown', function(e) {
   e.stopPropagation(); 
 });
-
 
 function getLocation(){
     mylocationtext = $('.tt-search-result__address').text();
@@ -105,11 +85,3 @@ function getLocation(){
       }
   });
 }
-
-
-
-
-
-
-
-
