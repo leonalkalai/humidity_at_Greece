@@ -6,13 +6,13 @@
 }
 
 .water-jar {
-    height: 280px;
-    width: 280px;
+    height: 80px;
+    width: 80px;
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     background: #020438;
     border-radius: 100%;
     overflow: hidden;
@@ -37,7 +37,7 @@
         -ms-flex-pack: center;
             justify-content: center;
     color: #fff;
-    font-size: 64px;
+    font-size: 24px;
   }
   .water-jar .water {
     position: absolute;
