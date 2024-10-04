@@ -92,8 +92,8 @@ p{
 }
 @media screen and (max-width: 60rem) {
   .water-jar {
-    height: 180px!important;
-    width: 180px!important;
+    height: 80px!important;
+    width: 80px!important;
   }
   .tt-side-panel {
     width: 100%!important;
